@@ -12,13 +12,10 @@ const AccommodationService = () => {
   };
 
   const findAll = (req, res) => {
+    //Accommodation.insertMany({ id: "615b675da2f62060655a7815", children: [ "Databases", "Languages" ] });
     Accommodation.find({}, (err, listingsAndReview) => {
       console.log("GET ALL ACCOMMODATIONS "+  listingsAndReview.toString())
-      if (err) return res.status(500).send("There was a problem finding the accommodations.");
-
-
-
-      
+      if (err) return res.status(500).send("There was a problem finding the accommodations.");      
       res.status(200).json(listingsAndReview);
     })
   };
